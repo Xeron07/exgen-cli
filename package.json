@@ -68,7 +68,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.6.0",
     "@types/validate-npm-package-name": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
@@ -80,21 +80,9 @@
     "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "standard-version": "^9.5.0",
-    "ts-jest": "^29.1.1",
+    "ts-jest": "^29.4.0",
     "tsx": "^3.12.10",
     "typescript": "^5.2.2"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "src/**/*.ts",
-      "!src/**/*.d.ts",
-      "!src/cli.ts"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.test.ts"
-    ]
   },
   "publishConfig": {
     "access": "public"

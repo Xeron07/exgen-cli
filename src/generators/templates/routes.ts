@@ -235,7 +235,7 @@ router.get('/', ${options.auth ? "authenticateToken, " : ""}async (req: Request,
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -280,7 +280,7 @@ router.get('/:id', ${options.auth ? "authenticateToken, " : ""}async (req: Reque
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -328,7 +328,7 @@ router.post('/', ${options.auth ? "authenticateToken, " : ""}async (req: Request
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -385,7 +385,7 @@ router.put('/:id', ${options.auth ? "authenticateToken, " : ""}async (req: Reque
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -425,7 +425,7 @@ router.delete('/:id', ${options.auth ? "authenticateToken, " : ""}async (req: Re
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -499,7 +499,7 @@ router.get('/', ${options.auth ? "authenticateToken, " : ""}async (req, res, nex
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -523,7 +523,7 @@ router.get('/:id', ${options.auth ? "authenticateToken, " : ""}async (req, res, 
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 
@@ -542,7 +542,7 @@ router.post('/', ${options.auth ? "authenticateToken, " : ""}async (req, res, ne
     `
     }
   } catch (error:any) {
-    next(error:any);
+    next(error);
   }
 });
 

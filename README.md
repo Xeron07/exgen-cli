@@ -1,177 +1,236 @@
-# 🚀 EXGEN CLI - Express API Generator
+# 🚀 EXGEN CLI
 
-EXGEN is a powerful, modern, and extensible CLI tool to generate clean, production-ready Express.js applications. It extends the official `express-generator` with advanced options like TypeScript, MongoDB, PostgreSQL, Docker, Swagger, ELK logging, and more.
+**Next-Level Express Application Generator:**
+Quickly create Express.js apps with useful tools, a clean project structure, and ready-to-use features.
 
----
-
-## ✨ Features
-
-- ✅ Clean Express.js project structure
-- 🧠 Interactive mode (like `yarn init`)
-- 🛠️ TypeScript, Jest, MongoDB, PostgreSQL support
-- 🔧 Flags inspired by `express-generator` (view, git, css, no-view)
-- 🐳 Docker support
-- 📘 Swagger OpenAPI integration
-- 📊 ELK-ready logging folders
-- 💼 Production-grade project bootstrapping
-- 🧩 Can upgrade existing projects (via `--docker`, `--swagger`)
+> Created by Xeron07
 
 ---
 
-## 📦 Installation
+## 📦 Features
+
+- Interactive mode for guided project setup
+- View engine & CSS engine support (like `express-generator`)
+- TypeScript or JavaScript support
+- Presets for API, fullstack, microservices, startup apps
+- Production flags: Docker, Swagger, Redis, Auth, Testing
+- Minimal or full-featured project scaffolding
+- Built-in config and preset commands
+
+---
+
+## 🧰 Installation (for local development)
 
 ```bash
-# Local install and dev
+git clone <https://github.com/Xeron07/exgen-cli.git>
+cd exgen-cli
+
+# Install dependencies
 npm install
 
-# Link globally to use anywhere
+# Run in development mode
+npm run dev
+
+# Build the project
+npm run build
+
+# Link globally to use `exgen` as a command
 npm link
+
 ```
 
 ---
 
-## 🚀 Usage
+## 🔧 Usage
 
 ```bash
-# Basic
-exgen my-app
+exgen [project-name] [options]
 
-# Interactive mode (no args)
-exgen
+```
 
-# With flags
-exgen my-api --ts --test --mongo --pg --view=ejs --git --css=css
+### Example
 
-# Production-ready
-exgen my-prod-api --prod
+```bash
+exgen my-api --ts --mongo --swagger --docker --auth
 
-# Lightweight
-exgen my-light-api --light
+```
 
-# Minimal production (no Docker/Swagger)
-exgen my-min-api --min
+or interactively:
 
-# Enhance existing project with Docker or Swagger
-cd my-app
-exgen --docker
-exgen --swagger
+```bash
+exgen --init
+
 ```
 
 ---
 
-## 🔧 Flags
+## 💡 Options Overview
 
-| Flag         | Description                                           |
-|--------------|-------------------------------------------------------|
-| `--ts`       | Enable TypeScript                                     |
-| `--test`     | Include Jest + Supertest                              |
-| `--mongo`    | Add MongoDB (Mongoose)                                |
-| `--pg`       | Add PostgreSQL (Sequelize)                            |
-| `--elk`      | Add ELK logging folder                                |
-| `--git`      | Create `.gitignore`                                   |
-| `--view`     | View engine (`ejs`, `pug`, `none`)                    |
-| `--css`      | CSS engine (`css`, `scss`, `less`)                    |
-| `--docker`   | Add Docker support                                    |
-| `--swagger`  | Add Swagger + OpenAPI spec                            |
-| `--light`    | All minimal useful defaults (TS, Git, Tests, Views)   |
-| `--prod`     | Full production setup (TS, Git, ELK, Docker, Swagger) |
-| `--min`      | Like `--prod` but without Docker and Swagger          |
+### 🛠 Initialization
+
+| Flag              | Description                 |
+| ----------------- | --------------------------- |
+| `--init`          | Start in interactive prompt |
+| `-v`, `--version` | Show CLI version            |
+| `-h`, `--help`    | Show help message           |
+
+### 🖼️ View & CSS (Express Generator Compatibility)
+
+| Flag              | Description                                |
+| ----------------- | ------------------------------------------ |
+| `--view <engine>` | Add view engine (e.g. `ejs`, `pug`, `hbs`) |
+| `--css <style>`   | Add CSS engine (e.g. `sass`, `less`)       |
+| `--no-view`       | Skip view engine                           |
+| `--git`           | Include `.gitignore`                       |
+
+### 🧪 Language
+
+| Flag                   | Description              |
+| ---------------------- | ------------------------ |
+| `--ts`, `--typescript` | Use TypeScript           |
+| `--js`, `--javascript` | Use JavaScript (default) |
+
+### ⚙️ Feature Flags
+
+| Flag                   | Adds...                              |
+| ---------------------- | ------------------------------------ |
+| `--swagger`            | Swagger/OpenAPI                      |
+| `--docker`             | Docker + Compose                     |
+| `--mongo`, `--mongodb` | MongoDB + Mongoose                   |
+| `--pg`, `--postgres`   | PostgreSQL + Sequelize               |
+| `--redis`              | Redis support                        |
+| `--test`               | Jest + Supertest                     |
+| `--elk`                | Logging with Winston + Elasticsearch |
+| `--auth`               | JWT authentication                   |
+| `--cors`               | CORS middleware                      |
+| `--helmet`             | Helmet for security                  |
+| `--rate-limit`         | Rate limiter                         |
+| `--validation`         | Joi validation                       |
+
+### 🧩 Presets
+
+| Preset           | Includes                                         |
+| ---------------- | ------------------------------------------------ |
+| `--api`          | TypeScript, CORS, Helmet, Validation, Test       |
+| `--fullstack`    | View, CSS, Auth, MongoDB, Test                   |
+| `--microservice` | TypeScript, Docker, Redis, Test, ELK             |
+| `--startup`      | TypeScript, MongoDB, Auth, Swagger, Docker, Test |
+
+### 🛠 Project Modes
+
+| Flag      | Description                                         |
+| --------- | --------------------------------------------------- |
+| `--light` | Essentials only (no DB/Docker/Swagger)              |
+| `--all`   | All core features except DB/Docker/Swagger          |
+| `--prod`  | Full production setup (Docker, Swagger, ELK, Tests) |
+| `--min`   | Minimal production setup (no Docker/Swagger)        |
+
+### 🧰 Dev/Build Flags
+
+| Flag             | Description                  |
+| ---------------- | ---------------------------- |
+| `--skip-install` | Don’t run `npm install`      |
+| `--skip-git`     | Don’t initialize git         |
+| `--verbose`      | Verbose logs                 |
+| `--dry-run`      | Show what would be generated |
+
+---
+
+## 📂 Folder Structure
+
+The project structure generated by `exgen` is modular, clean, and suited for real-world applications:
+
+```
+(root)/
+├── src/
+│   ├── api/
+│   │   ├── routes/          # Route definitions (modular per resource)
+│   │   └── middleware/      # Express middleware (auth, validation, logging)
+│   ├── config/              # Environment and app configuration
+│   ├── models/              # Mongoose/Sequelize schemas/models
+│   ├── services/            # Business logic, service layers
+│   └── utils/               # Reusable helpers and utilities
+├── views/                   # View templates (e.g. EJS, Pug) if `--view` used
+├── public/                  # Static assets served directly
+│   ├── stylesheets/         # CSS or preprocessor files
+│   ├── javascripts/         # Static frontend scripts
+│   └── images/              # Public images
+├── bin/
+│   └── www                  # App entrypoint (like express-generator)
+├── Dockerfile               # If `--docker` is used
+├── docker-compose.yml       # For dockerized multi-service setups
+├── swagger.yaml             # Swagger/OpenAPI docs (if `--swagger`)
+├── .env                     # Environment variables (auto created)
+├── .gitignore               # If `--git` or defaulted
+├── package.json             # Project metadata and scripts
+└── README.md
+
+```
+
+---
+
+## 🔧 Commands
+
+### `exgen config`
+
+Manage CLI-wide settings.
+
+```bash
+exgen config
+
+```
+
+### `exgen presets`
+
+List or manage available presets.
+
+```bash
+exgen presets
+
+```
+
+### `exgen info`
+
+Show debugging information about your environment.
+
+```bash
+exgen info
+
+```
 
 ---
 
 ## 🧪 Testing
 
 ```bash
-npm test
-```
-
-Test files are located in `/tests`.
-
----
-
-## 📘 Interactive Prompts
-
-If you run `exgen` with no flags, it will ask for:
-- Project name
-- Description
-- Author
-- Version
-- Feature toggles (TS, Mongo, PG, Docker, etc.)
-
----
-
-## 🐳 Docker Support
-
-`--docker` adds:
-- `Dockerfile`
-- `.dockerignore`
-- Optional `docker-compose.yml`
-
----
-
-## 📘 Swagger Support
-
-`--swagger` adds:
-- `swagger.json`
-- `swagger-ui-express` integration route
-
----
-
-## 📂 Example Folder Structure
+npm run test
+npm run test:watch
 
 ```
-my-app/
-├── app.js / app.ts
-├── bin/www
-├── routes/
-├── views/
-├── public/
-├── swagger.json
-├── Dockerfile
-├── .gitignore
-├── package.json
-└── ...
-```
 
 ---
 
-## 📤 Publish to NPM
+## 🔗 Related Links
 
-1. Update `package.json`:
-```json
-"bin": {
-  "exgen": "./bin/exgen.js"
-}
-```
-
-2. Make CLI executable:
-```bash
-chmod +x bin/exgen.js
-```
-
-3. Login and publish:
-```bash
-npm login
-npm publish
-```
+- 📘 Express.js: [https://expressjs.com/](https://expressjs.com/)
+- 🐳 Docker: [https://www.docker.com/](https://www.docker.com/)
+- 📚 Swagger/OpenAPI: [https://swagger.io/specification/](https://swagger.io/specification/)
+- ⚙️ Joi Validation: [https://joi.dev/](https://joi.dev/)
+- 🧪 Jest Testing: [https://jestjs.io/](https://jestjs.io/)
 
 ---
 
-## 🧬 GitHub Actions CI (Optional)
+## 📄 License
 
-Use `.github/workflows/ci.yml` to:
-- Run tests
-- Publish to NPM on tag push
-- Enforce quality
+**MIT**
 
----
-
-## 👨‍💻 Contributing
-
-PRs, issues, and suggestions are welcome!
+© [Xeron07](https://github.com/Xeron07)
 
 ---
 
-## 🪪 License
+## 📬 Feedback & Contributions
 
-MIT © [Xeron07](mailto:ni.xeron07@gmail.com)
+- Found a bug? [Open an issue](https://github.com/Xeron07/exgen-cli/issues)
+- Want to contribute? PRs welcome!
+
+---
