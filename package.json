@@ -1,0 +1,45 @@
+{
+  "name": "exgen",
+  "version": "1.0.0",
+  "description": "\u2728 EXGEN CLI - Express API Structure Generator",
+  "main": "bin/exgen.js",
+  "bin": {
+    "exgen": "./bin/exgen.js"
+  },
+  "scripts": {
+    "start": "node bin/exgen.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "cli",
+    "express",
+    "generator",
+    "scaffold",
+    "typescript",
+    "mongo",
+    "postgres",
+    "swagger",
+    "docker",
+    "nodejs"
+  ],
+  "author": "Xeron07 <ni.xeron07@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xeron07/exgen"
+  },
+  "bugs": {
+    "url": "https://github.com/Xeron07/exgen/issues"
+  },
+  "homepage": "https://github.com/Xeron07/exgen#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "supertest": "^6.3.3"
+  }
+}
