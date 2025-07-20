@@ -1,5 +1,5 @@
 {
-  "name": "exgen",
+  "name": "exgen-cli",
   "version": "1.0.0",
   "description": "Next-Level Express Application Generator with modern architectural patterns",
   "main": "dist/index.js",
@@ -40,12 +40,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Xeron07/exgen.git"
+    "url": "https://github.com/Xeron07/exgen-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/Xeron07/exgen/issues"
+    "url": "https://github.com/Xeron07/exgen-cli/issues"
   },
-  "homepage": "https://github.com/Xeron07/exgen#readme",
+  "homepage": "https://github.com/Xeron07/exgen-cli#readme",
   "engines": {
     "node": ">=16.0.0"
   },
